@@ -59,7 +59,7 @@ Returns or resets the internal Map object used as a registry for tracking inputs
 ```javascript
 // reset the internal registry
 a = rr(5);
-rr(null);
+rr.registry(null);
 b = rr(5);
 a === b; // false
 
@@ -153,7 +153,7 @@ Or alternatively, to use the sum of all integers in the input array as the Map k
 rr.key(function(array) {
   return array.reduce(function(a, b) {return a + b;});
 });
-rr.key([1, 2]);
+rr([1, 2]);
 rr.registry().has(3); // true
 ```
 

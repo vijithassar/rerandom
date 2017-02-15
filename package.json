@@ -1,6 +1,6 @@
 {
   "name": "rerandom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "deterministic randomization",
   "main": "./build/rerandom.js",
   "scripts": {
