@@ -28,7 +28,7 @@ Or just include as a script tag:
 
 ## API
 
-**rerandom**(*factory*);
+**rerandom**(*factory*)
 
 Factory which returns an instance of the rerandom function. Each instance tracks previous values independently.
 
@@ -36,7 +36,7 @@ Factory which returns an instance of the rerandom function. Each instance tracks
 var rr = rerandom();
 ```
 
-**instance**(*input*);
+**instance**(*input*)
 
 The main instance function returns a random float value between 0 and 1, just like Math.random(). It takes an optional input, and will return consistent output values whenever an input value is repeated.
 
@@ -52,7 +52,7 @@ rr(a) === rr(b); // false
 rr(a) === rr(c); // true
 ```
 
-instance.**registry**(*reset*);
+instance.**registry**(*reset*)
 
 Returns or resets the internal Map object used as a registry for tracking inputs. If the optional reset argument is `null`, then the registry will be overwritten, and you'll start over with a clean slate again.
 
@@ -68,7 +68,7 @@ let previous = rr.registry()
 previous.has(5) // true
 ```
 
-instance.**generator**(*function*);
+instance.**generator**(*function*)
 
 Gets or sets a custom random number generator. [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) is used by default, but you can also roll your own using the [Web Crypto API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) or other tools.
 
@@ -89,7 +89,7 @@ rr.generator(function() {
 
 Custom random number generators passed into the instance must be *functions* which always *return numbers*, and you'll get an error if you try to use anything else. To convert the random number outputs into arbitrary alternate types which may be more contextually useful, use the .post() method.
 
-instance.**post**(*function*);
+instance.**post**(*function*)
 
 Gets or sets a post-processing function to be run on the results of the randomization. The float values returned by standard randomization often aren't immediately useful, so this is a way to bundle your desired behavior with the instance.
 
